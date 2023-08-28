@@ -2,12 +2,11 @@ const app = require("express")();
 const httpServer = require("http").createServer(app);
 const io = require("socket.io")(httpServer, {
   cors: {
-    origin: "https://code-editor-delta.vercel.app", // Replace with your client's domain
+    origin: ["https://code-editor-delta.vercel.app", "http://localhost:5173"],
     methods: ["GET", "POST"],
     credentials: true,
   },
 });
-
 // Store connected users and rooms
 const roomToUsersMap = {};
 
