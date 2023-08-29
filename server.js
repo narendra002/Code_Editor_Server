@@ -6,7 +6,7 @@ app.use(cors()); // Enable CORS for your Express app
 app.use(function (req, res, next) {
 
     // Website you wish to allow to connect
-    res.setHeader('Access-Control-Allow-Origin', 'https://code-editor-delta.vercel.app/');
+    res.setHeader('Access-Control-Allow-Origin', 'https://code-editor-delta.vercel.app');
 
     // Request methods you wish to allow
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
@@ -24,7 +24,7 @@ app.use(function (req, res, next) {
 const httpServer = require("http").createServer(app);
 const io = require("socket.io")(httpServer, {
   cors: {
-    origin: ["https://code-editor-delta.vercel.app/", "http://localhost:5173"],
+    origin: ["https://code-editor-delta.vercel.app", "http://localhost:5173"],
     methods: ["GET", "POST"],
     allowedHeaders: ["Content-Type", "Authorization", "Access-Control-Allow-Origin"],
     credentials: true,
