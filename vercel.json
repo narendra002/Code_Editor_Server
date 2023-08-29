@@ -6,12 +6,7 @@
       "use": "@now/node"
     }
   ],
-  "rewrites": [
-    { "source": "/page", "destination": "/server.js" }
-  ],
-  "redirects": [
-    { "source": "/old-page", "destination": "/new-page", "statusCode": 301 }
-  ],
+
   "headers": [
     {
       "source": "/(.*)",
