@@ -26,10 +26,11 @@ const io = require("socket.io")(httpServer, {
   cors: {
     origin: ["https://code-editor-delta.vercel.app/", "http://localhost:5173"],
     methods: ["GET", "POST"],
-    allowedHeaders: ["Content-Type", "Authorization"],
+    allowedHeaders: ["Content-Type", "Authorization", "Access-Control-Allow-Origin"],
     credentials: true,
   }
 });
+
 
 const roomToUsersMap = {}; // Store connected users and rooms
 
