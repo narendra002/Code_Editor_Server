@@ -2,7 +2,7 @@ const app = require("express")();
 const httpServer = require("http").createServer(app);
 const io = require("socket.io")(httpServer, {
   cors: {
-    origin: ["https://code-editor-delta.vercel.app", "http://localhost:5173"],
+    origin: ["https://code-editor-delta.vercel.app/", "http://localhost:5173"],
     methods: ["GET", "POST"],
     allowedHeaders: ["Content-Type", "Authorization"], // Define only your custom headers here
     credentials: true,
