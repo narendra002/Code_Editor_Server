@@ -1,10 +1,15 @@
 const app = require("express")();
 const httpServer = require("http").createServer(app);
 const io = require("socket.io")(httpServer, {
-  cors: {
-    origin: ["https://code-editor-delta.vercel.app", "http://localhost:5173"],
-    
-  },
+  handlePreflightRequest: (req, res) => {
+        const headers = {
+            "Access-Control-Allow-Headers": "Content-Type, Authorization",
+            "Access-Control-Allow-Origin": req.headers.origin, //or the specific origin you want to give access to,
+            "Access-Control-Allow-Credentials": true
+        };
+        res.writeHead(200, headers);
+        res.end();
+    }
 });
 
 // var io = require('socket.io')(httpServer,  { cors: { origin: '*' } });
