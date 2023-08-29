@@ -6,11 +6,11 @@
       "use": "@now/node"
     }
   ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "server.js"
-    }
+  "rewrites": [
+    { "source": "/page", "destination": "/server.js" }
+  ],
+  "redirects": [
+    { "source": "/old-page", "destination": "/new-page", "statusCode": 301 }
   ],
   "headers": [
     {
@@ -22,5 +22,7 @@
         { "key": "Access-Control-Allow-Headers", "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version" }
       ]
     }
-  ]
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false
 }
