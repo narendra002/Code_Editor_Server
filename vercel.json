@@ -10,7 +10,11 @@
   {
    "src":"/(.*)",
     "dest":"/"
-  }
+  },
+        {
+      "src": "/socket.io/",
+      "dest": "./server.js"
+    },
   ],
   "headers": [
     {
@@ -24,5 +28,6 @@
     }
   ],
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+    "websockets": true
 }
